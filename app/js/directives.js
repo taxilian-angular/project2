@@ -30,6 +30,19 @@ module.directive('gcBubbleRow', [function() {
                 }
             };
             scope.toggleBubbleValue = function($index, $event) {
+                var oldVal = scope.value || "";
+                var newVal = oldVal;
+                if (oldVal.indexOf($index) > -1) {
+                    newVal = oldVal.replace($index, '', 'g');
+                } else {
+                    newVal += $index;
+                    // enforce sort order
+                    newVal = newVal.split("");
+                    newVal.sort();
+                    newVal = newVal.join("");
+                }
+                scope.value = newVal;
+                $event.stopPropagation();
             };
         }
     };
