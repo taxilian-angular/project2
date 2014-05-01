@@ -38,3 +38,8 @@
 }
 
 .bubbleRow { font-family: GCBubbles; }
+
+.left-panel { position: relative; width: 45%; float: left; }
+.right-panel { position: relative; width: 45%; float: left; }
+
+.clearfix { clear: both; }

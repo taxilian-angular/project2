@@ -1,5 +1,14 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
+<p>Please complete the following answer key: <a href="#" ng-click="randomize($event)">(click here to randomize)</a></p>
+<p class="container">
+    <ol class="left-panel">
+        <li ng-repeat="q in data.questions">
+            <gc-bubble-row choices="data.choices" value="q.value"></gc-bubble-row>
+        </li>
+    </ol>
+    <ol class="right-panel">
+        <li ng-repeat="q in data.questions">
+            {{ q.value }}
+        </li>
+    </ol>
 </p>
+<div class="clearfix"></div>
