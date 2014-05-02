@@ -1,6 +1,6 @@
-<div class="bubbleRow">
+<div class="bubbleRow" sly-evaluate-only-when="value + ' ' + choices">
     <b class="bubble"
        ng-repeat="bubble in choices"
-       ng-bind-html="getBubbleValue(bub, $index)"
+       ng-bind-html="getBubbleValue(bubble, $index)"
        ng-click="toggleBubbleValue($index, $event);"></b>
 </div>
