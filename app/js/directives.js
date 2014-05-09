@@ -21,8 +21,15 @@ module.directive('gcBubbleRow', [function() {
         },
         templateUrl: 'partials/gcBubbleRow.html',
         link: function(scope, element, attrs) {
+            var callCount = {};
+            function countCalls(bub, idx) {
+                var key = bub + "-" + idx;
+                callCount[key] = (callCount[key] || 0) + 1;
+                console.log("getBubbleValue called with ", key, " #", callCount[key]);
+            }
             scope.getBubbleValue = function(bub, $index) {
                 var indexes;
+                countCalls(bub, $index);
                 if (scope.value && scope.value.indexOf($index) > -1) {
                     return bubbledValue;
                 } else {

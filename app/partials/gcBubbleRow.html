@@ -1,6 +1,6 @@
 <div class="bubbleRow">
     <b class="bubble"
        ng-repeat="bubble in choices"
-       ng-bind-html="getBubbleValue(bub, $index)"
+       ng-bind-html="getBubbleValue(bubble, $index)"
        ng-click="toggleBubbleValue($index, $event);"></b>
 </div>
